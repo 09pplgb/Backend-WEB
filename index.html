@@ -6,20 +6,15 @@
     <title>Student score</title>
 </head>
 <body>
-    <h1>Nilai Siswa</h1>
-    <ul>
-        {% for student in students %}
-            <li>
-                Nama: {{ student['name'] }} - Nilai: {{ student['score'] }}
-                {% if student['score'] > 90 %}
-                    - Congratulations
-                {% elif student['score'] >= 76 %}
-                    - Very good
-                {% else %}
-                    - maaf, Anda tidak lulus
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+    {% for students in students %}
+        <h1>{{ student['name'] }}</h1>
+        {% if student['score'] > 90 %}
+        <p>congratulations</p>
+        {% elif student['score'] > 75 and student ['score'] <= 90 %}
+        <p>very good</p>
+        {% else %}
+        <p>Maaf, Anda belum lulus</p>
+        {% endif %}
+    {% endfor %}
 </body>
 </html>
